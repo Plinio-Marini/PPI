@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang = "pt-BR">
+	
+	<head>
+		<meta charset = "UTF-8">
+		<title>Formulários em HTML</title>
+		<link rel="stylesheet" href="ex6.css">
+
+	</head>
+
+	<body>
+		<main>
+			<form action="cadastraCliente.php" method="post" enctype="multipart/form-data">
+				<div> <!-- fieldset Dados Pessoais!-->
+					<fieldset>
+						<legend>Dados Pessoais</legend>
+
+						<div>
+							<label for="name">Nome: </label>
+							<input type="text" id=name name="nome" minlength="2" maxlength="50" required>
+							<span></span>
+						</div> <!-- Nome !-->
+
+						<div>
+							<label for="email">Email: </label>
+							<input type="email" id=email name="email" required>
+							<span></span>
+						</div> <!-- E-mail !-->
+
+						<div>
+							<label for="cpf">CPF: </label>
+							<input type="text" id=cpf name="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required>
+							<span></span>
+						</div> <!-- CPF !-->
+
+						<div>
+							<label for="age">Idade: </label>
+							<input type="number" id=age name="age" min="0" max="200" required>
+							<span></span>
+						</div> <!-- Idade !-->
+
+						<div>
+							<label for="tel">Telefone: </label>
+							<input type="tel" id=tel name="tel" required>
+						</div> <!-- Telefone !-->
+
+
+						<div>
+							<label for="bir">Data de Nascimento: </label>
+							<input type="date" id=bir name="bir">
+						</div> <!-- Nascimento !-->
+
+						<div>
+							<p>Sexo:
+								<input type="radio" name="sex" value="masculino">Masculino
+								<input type="radio" name="sex" value="feminino">Feminino
+								<input type="radio" name="sex" value="outro">Outro
+							</p>
+						</div> <!-- Sexo !-->
+
+						<div>
+							<p>Estado Civil:
+								<input type="radio" name="estadocivil" value="solteiro">Solteiro(a)
+								<input type="radio" name="estadocivil" value="casado">Casado(a)
+								<input type="radio" name="estadocivil" value="divorciado">Divorciado(a)
+							</p>
+						</div> <!-- Estado Civil !-->
+					</fieldset> 
+				</div><!-- fieldset Dados Pessoais!-->
+
+				<div> <!-- Endereço de Entrega !--> 
+
+					<fieldset>
+						<legend>Endereço de Entrega</legend>
+						<div>
+							<label for="cep">CEP: </label>
+							<input type="text" id=cep name="cep" pattern="\d{5}\-\d{3}\" required>
+							<span></span>
+						</div>
+						<label for="tipo">Tipo de Logradouro</label>
+						<select id=tipo name="tipo">
+							<option value="AV">Avenida</option>
+							<option value="RUA">Rua</option>
+							<option value="PRACA">Praça</option>
+						</select>
+
+						<label for="logra">Logradouro: </label>
+						<input type="text" id=logra name="logra" maxlength="100" required>
+
+						<label for="bairro">Bairro: </label>
+						<input type="text" id=bairro name="bairro" maxlength="100" required>
+
+						<p>
+							<label for="city">Cidade: </label>
+							<input type="text" id=city name="city" required>
+							<input type="hidden" name="oculto" value="teste">
+
+							<label for="estado">Estado: </label>
+							<input type="text" id=estado name="estado" required>
+						</p>
+					</fieldset>
+				</div> <!-- Endereço de Entrega !-->
+
+				<div> <!-- Informações Adicionais !--> 
+					<fieldset>
+						<legend>Informações Adicionais</legend>
+						<div>
+							<b>Campos de Interesse</b>
+								<div>
+									<input type="checkbox" id="filmes" name="lazer[]" value="filme" checked>
+									<label for="filmes">Filmes</label>
+								</div>
+				
+								<div>
+									<input type="checkbox" id="informatica" name="lazer[]" value="informatica">
+									<label for="informatica">Informática</label>
+								</div>
+
+								<div>
+									<input type="checkbox" id="games" name="lazer[]" value="games">
+									<label for="games">Games</label>
+								</div>
+
+								<div>
+									<input type="checkbox" id="livros" name="lazer[]" value="livros">
+									<label for="livros">Livros</label>
+								</div>
+
+								<div>
+									<input type="checkbox" id="roupas" name="lazer[]" value="roupas">
+									<label for="roupas">Roupas</label>
+								</div>
+
+							<p><b>Deixe um Comentário</b></p>
+							<div>
+								<textarea name="teste" rows="4" cols="10">
+									Texto aqui
+								</textarea>
+							</div>
+						</div>
+
+						<div>
+							<input type="file" name="arquivo">
+						</div>
+					</fieldset>
+				</div> <!-- Informações Adicionais !--> 
+
+				<div>
+					<p>
+						<button>Enviar</button>
+						<button type="reset">Limpar</button>
+					</p>
+				</div>
+
+				
+			</form>
+		</main>
+	</body>
+</html>
